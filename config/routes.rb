@@ -1,4 +1,5 @@
 TechReviewSite::Application.routes.draw do
+<<<<<<< Updated upstream
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -14,6 +15,14 @@ TechReviewSite::Application.routes.draw do
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
   resources :works, :only => [:index] do
+=======
+
+
+  devise_for :users
+  resources :users, only: :show
+  resources :products, only: :show do
+    resources :reviews, only: [:new, :create]
+>>>>>>> Stashed changes
     collection do
       get :initial_scraping
       get :first_scraping
